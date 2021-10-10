@@ -12,7 +12,7 @@
 	<a href="/boardlist">게시판</a><br>
 	<a href="/newForm">회원가입</a><br>
 	<hr>
-	
+	로그인 홈페이지
 	< Login >
 	<hr>
 	<form action = "/loginDB">
