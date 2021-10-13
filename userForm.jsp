@@ -13,6 +13,6 @@
 <a href="/newForm">회원가입</a><br>
 <hr>
 <h1>중간고사 웹사이트 입니다</h1>
-
+asdfasdfasdfsa
 </body>
 </html>
