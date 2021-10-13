@@ -13,6 +13,7 @@
 	<a href="/newForm">회원가입</a><br>
 	<hr>
 	로그인 홈페이지
+asdfasdfasdfasdf
 	< Login >
 	<hr>
 	<form action = "/loginDB">
