@@ -11,7 +11,7 @@
 	<a href="/loginForm">로그인</a><br>
 	<a href="/boardlist">게시판</a><br>
 	<a href="/newForm">회원가입</a><br>
-	<a href="/newForm">회원가입</a><br>
+	<a href="/newForm">회원가입 ok</a><br>
 	
 	
 	<hr>
