@@ -22,7 +22,7 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException exception) throws IOException, ServletException
 	{
-		String loginid = request.getParameter("j_username");
+		String loginid = request.getParameter("username");
 		String errormsg = "";
 
 		if(exception instanceof BadCredentialsException) {

@@ -6,7 +6,7 @@
 <mapper namespace="com.it.springboot.daodto.IUserlistDao">
 
     <select id="findUser" resultType="com.it.springboot.daodto.UserlistDto">
-        select * from Users where name=#{param1}
+        select * from Users where u_id=#{param1}
     </select>
 
     <insert id="save" parameterType="com.it.springboot.daodto.UserlistDto" >

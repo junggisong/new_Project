@@ -33,10 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -48,28 +45,39 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 //.anyRequest().authenticated();
                 .anyRequest().permitAll();
- 
+
         http.formLogin()
                 .loginPage("/guest/login")
                 .loginProcessingUrl("/guest/aaa")
-                .defaultSuccessUrl("/")
-                .usernameParameter("username")
-                .passwordParameter("password")
-
-
-
+                //.defaultSuccessUrl("/")
+                .usernameParameter("j_username")
+                .passwordParameter("j_password")
+                .failureForwardUrl("/members/loginerror?login_error=1")
                 .permitAll();
- 
+
         http.logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-        		.logoutSuccessUrl("/")
-                .invalidateHttpSession(true)
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/")
                 .permitAll();
 
         http.csrf().disable();
     }
 
-    
+    @Autowired
+    private DataSource dataSource;
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select u_id, u_pw from Users where name =?")
+                .authoritiesByUsernameQuery( "select u_id from Users where name = ?");
+
+
+
+    }
+
 
 
 }

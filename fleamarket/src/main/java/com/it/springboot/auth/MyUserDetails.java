@@ -29,7 +29,7 @@ public class MyUserDetails implements UserDetails, OAuth2User{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
 		collectors.add( ()->{
-		   return user.getUrole();
+		   return user.getAuthority();
 		});
 		return collectors;
 	}
@@ -43,7 +43,7 @@ public class MyUserDetails implements UserDetails, OAuth2User{
 	@Override
 	public String getUsername() {
 
-		return user.getName();
+		return user.getId();
 	}
 
 	@Override

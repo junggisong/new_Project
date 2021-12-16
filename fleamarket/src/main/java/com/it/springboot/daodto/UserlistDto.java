@@ -7,8 +7,7 @@ public class UserlistDto {
 	private String name;
 	private String address;
 	private String urole;
-	private int uno;
-	private String aurthory;
+	private String Authority;
 
 
 
@@ -42,11 +41,7 @@ public class UserlistDto {
 
 	public void setUrole(String urole) {this.urole = urole;}
 
-	public int getUno() {return uno;}
+	public String getAuthority() { return Authority;}
 
-	public void setUno(int uno) {this.uno = uno;}
-
-	public String getAuthority() { return aurthory;}
-
-	public void setAurthory(String aurthory) {this.aurthory = aurthory;}
+	public void setAuthority(String Authority) {this.Authority = Authority;}
 }

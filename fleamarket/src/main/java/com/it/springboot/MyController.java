@@ -9,7 +9,6 @@ import com.it.springboot.daodto.UserlistDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -19,6 +18,8 @@ public class MyController {
 	private IUserlistDao userlistDao;
 	@Autowired
 	private IProductDao productDao;
+//	@Autowired
+//	private BCryptPasswordEncoder pwdEncoder;
 
 
 
@@ -44,17 +45,19 @@ public class MyController {
 		String name = req.getParameter("name");
 		String address = req.getParameter("address");
 		String phone = req.getParameter("phone");
-		String pwd= req.getParameter("pwd");
-
+//		String encpwd= pwdEncoder.encode(req.getParameter("pwd"));
+		String urole = req.getParameter("urole");
 		String auth = "ROLE_USER";
 		int en = 1;
-		
+
 		UserlistDto dto = new UserlistDto();
 		dto.setId(id);
-		dto.setPw(pwd);
+//		dto.setPw(encpwd);
 		dto.setAddress(address);
 		dto.setPhone(phone);
 		dto.setName(name);
+		dto.setAuthority(auth);
+		dto.setUrole(urole);
 
 
 
@@ -109,6 +112,7 @@ public class MyController {
 	public String login() {
 		return "guest/login";
 	}
+
 
 
 
