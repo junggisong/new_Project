@@ -25,7 +25,7 @@ import com.it.spring.dto.loginData;
 
 @Controller
 public class MyController {
-	
+	String b_number ="";
 	@Autowired
 	BCryptPasswordEncoder pwdEncoder;
 	
@@ -103,6 +103,27 @@ public class MyController {
 		return "member/welcome2"; // member/welcome2.jsp
 	}
 	
+	@RequestMapping("/member/funitureWelcome")
+	public String clothWelcome1(Model model){
+		
+		List<BoardDTO> list = dao.boardList1();
+		model.addAttribute("list", list);
+		return "member/clothesWelcome";
+	}
+	@RequestMapping("/member/eletronicWelcome")
+	public String clothWelcome2(Model model){
+		
+		List<BoardDTO> list = dao.boardList2();
+		model.addAttribute("list", list);
+		return "member/clothesWelcome";
+	}
+	@RequestMapping("/member/clothesWelcome3")
+	public String clothWelcome3(Model model){
+		
+		List<BoardDTO> list = dao.boardList3();
+		model.addAttribute("list", list);
+		return "member/clothesWelcome";
+	}
 	@RequestMapping("/member/clothesWelcome")
 	public String clothWelcome(Model model){
 		
@@ -142,9 +163,11 @@ public class MyController {
 	
 	@RequestMapping("/changeDelivery")
 	public String changeDelivery(Model model, HttpServletRequest request) {
-		String b_no =request.getParameter("b_no");
+		System.out.println(b_number);
 		String delivery = request.getParameter("delivery");
-		BuyDAO.update(delivery, b_no);
+		System.out.println(delivery);
+		BuyDAO.update(delivery, b_number);
+
 		
 //		User_listDTO my = mypageDAO.getOne();
 //		model.addAttribute("my",my);
@@ -153,7 +176,7 @@ public class MyController {
 //		model.addAttribute("adminBuy",buyList);
 		
 		
-		return "admin/adminForm"; 
+		return "redirect:/admin/welcome"; 
 	}
 	
 	
@@ -161,7 +184,7 @@ public class MyController {
 	public String changeDelivery1(HttpServletRequest request, Model model) {
 		
 		String b_no = request.getParameter("id");
-		
+		b_number = b_no;
 		BuyDTO adminBuy = BuyDAO.getOne(b_no);
 		model.addAttribute("adminBuy",adminBuy);
 		

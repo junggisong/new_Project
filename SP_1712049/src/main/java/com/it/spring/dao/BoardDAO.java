@@ -24,6 +24,30 @@ public class BoardDAO {
 	
 		return list;
 	}
+	public List<BoardDTO> boardList1(){ 
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		String sql = "select * from Product where p_category='2'";
+		
+		list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class));
+	
+		return list;
+	}
+	public List<BoardDTO> boardList2(){ 
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		String sql = "select * from Product where p_category='3'";
+		
+		list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class));
+	
+		return list;
+	}
+	public List<BoardDTO> boardList3(){ 
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		String sql = "select * from Product where p_category='4'";
+		
+		list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class));
+	
+		return list;
+	}
 	
 	
 	public void updateReal(String p_no, String p_name, String p_content){ //회원저장	(id, name)		

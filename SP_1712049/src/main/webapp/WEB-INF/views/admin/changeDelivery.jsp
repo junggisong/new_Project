@@ -69,7 +69,7 @@
 			      <input type="submit" value ="상품수정" class="btn btn-primary" onClick="location.href='/admin/welcome'"></a>
 			      
 			      
-			      <button type="submit" class="btn btn-primary">취소하기</button>
+			      <button type="button" class="btn btn-primary">취소하기</button>
 			    </form>
 			     
         		        

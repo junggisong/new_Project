@@ -72,33 +72,8 @@
 		</div>
 	</div>
  	<hr>
-	<!-- 끝 -->
- 	<footer style="background-color: #000000; color: #ffffff">
- 		<div class="container">
- 			<br>
- 			<div class="row">
- 				<div class="col-sm-2" style="text-align:center;"><h5>Capstone Design &copy; 2021</h5><h5>송중기(1712049)</h5></div>
- 				<div class="col-sm-4"><h4>개발자의 한마디</h4><p>소스코드 공유, 아이디어 참조 및 학습을 위하여 만든 페이지이니 유용하게 쓰시기 바랍니다.</p></div>
- 				<div class="col-sm-2"><h4 style="text-align: center;">카테고리</h4>
- 					<div class="list-group">
- 						<a href="/" class="list-group-item">소개</a>
- 						<a href="lect.html" class="list-group-item">강의자료</a>
- 						<a href="/member/welcome" class="list-group-item">소스코드 공유</a>
- 					</div>
- 			    </div>
- 			    <div class="col-sm-2">
- 			    	<div class="list-group"><h4 style="text-align: center;">안내</h4>
- 						<a href="http://www.uc.ac.kr/www/index.php?pCode=schenotice" class="list-group-item">학사공지</a>
- 						<a href="http://www.uc.ac.kr/www/index.php?pCode=ucnotice" class="list-group-item">대학공지</a>
- 						<a href="http://www.uc.ac.kr/www/index.php?pCode=uccm" class="list-group-item">취업공지</a>
- 					</div>
- 			    </div>
- 			    <div class="col-sm-2"><h4 style="text-align: center;"><p><span class="glyphicon glyphicon-ok"></span>&nbsp;</p>Capstone Design</h4>
-
- 			    </div>
- 		    </div>
- 	    </div>
- 	</footer>
+	
+ 	
  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  	<script src="js/bootstrap.js"></script>
  </body>
